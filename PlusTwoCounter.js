@@ -2,7 +2,7 @@ class PlusTwo extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            Counter: 0
+            Counter : 0
         }
         this.onClickHandler = this.onClickHandler.bind(this);
     }
@@ -14,15 +14,15 @@ class PlusTwo extends React.Component{
 
     render(){
         const county =  this.state.Counter;
-        let line =  React.createElement('div', null, 'the value is', county);
-        let buttonLine = React.createElement('button', {
-            onClick: this.onClickHandler
-        }, 'plus two');
+        let line =  <div> 'the value is', {county}</div>;
+        let buttonLine = <button 
+            onClick={this.onClickHandler}
+        > plus two</button>;
 
-        return React.createElement('div', null, line, buttonLine);
+        <div> {line} {buttonLine}</div>;
     }
 }
 
-const element = React.createElement(PlusTwo);
+const element = <PlusTwo/>;
 
 ReactDOM.render(element, document.getElementById('root'));
